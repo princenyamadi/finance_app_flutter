@@ -38,20 +38,22 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Finance'),
       ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              elevation: 5,
-              color: Colors.blue,
-              child: Text('CHART'),
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                elevation: 5,
+                color: Colors.blue,
+                child: Text('CHART'),
+              ),
             ),
-          ),
-          UserTransactions(),
-        ],
+            UserTransactions(),
+          ],
+        ),
       ),
     );
   }
