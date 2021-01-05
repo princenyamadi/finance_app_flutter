@@ -19,10 +19,10 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Personal Expenses',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        primarySwatch: Colors.purple,
+        accentColor: Colors.amber,
       ),
       home: MyHomePage(),
     );
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       // backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Text('Finance'),
+        title: Text('Personal Expenses'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
