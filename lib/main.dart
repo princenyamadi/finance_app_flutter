@@ -74,6 +74,12 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _deleteTransaction(String id) {
+    setState(() {
+      _userTransactions.removeWhere((tx) => tx.id == id);
+    });
+  }
+
   final titleController = TextEditingController();
 
   final amountController = TextEditingController();
@@ -118,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Chart(_userTransactions),
               ),
             ),
-            TransactionList(_userTransactions),
+            TransactionList(_userTransactions, _deleteTransaction),
           ],
         ),
       ),
