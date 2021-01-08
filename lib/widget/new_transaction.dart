@@ -11,21 +11,24 @@ class NewTransaction extends StatefulWidget {
 }
 
 class _NewTransactionState extends State<NewTransaction> {
-  final titleController = TextEditingController();
-  final amountController = TextEditingController();
+  final _titleController = TextEditingController();
+  final _amountController = TextEditingController();
   DateTime _selectedDate;
 
   void _submitData() {
-    final enteredTitle = titleController.text;
-    final enteredAmount = double.parse(amountController.text);
+    if (_amountController.text.isEmpty) {
+      return;
+    }
+    final enteredTitle = _titleController.text;
+    final enteredAmount = double.parse(_amountController.text);
 
-    if (enteredTitle.isEmpty || enteredAmount <= 0) {
+    if (enteredTitle.isEmpty || enteredAmount <= 0 || _selectedDate == null) {
       return;
     }
     widget.addTx(
-      titleController.text,
-      double.parse(amountController.text),
-    );
+        txTitle: _titleController.text,
+        txAmount: double.parse(_amountController.text),
+        chosenDate: _selectedDate);
     Navigator.of(context).pop();
   }
 
@@ -57,7 +60,7 @@ class _NewTransactionState extends State<NewTransaction> {
           children: <Widget>[
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
-              controller: titleController,
+              controller: _titleController,
               onSubmitted: (_) => _submitData(),
             ),
             TextField(
@@ -65,7 +68,7 @@ class _NewTransactionState extends State<NewTransaction> {
               // onChanged: (value) {
               //   amountInput = value;
               // },
-              controller: amountController,
+              controller: _amountController,
               keyboardType: TextInputType.number,
               onSubmitted: (_) => _submitData(),
             ),
