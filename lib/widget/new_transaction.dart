@@ -112,3 +112,41 @@ class _NewTransactionState extends State<NewTransaction> {
     );
   }
 }
+
+// *NEW IMPROVED BOTTOM SHEET
+// showModalBottomSheet(
+//     shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+//     backgroundColor: Colors.black,
+//     context: context,
+//     isScrollControlled: true,
+//     builder: (context) => Padding(
+//       padding: const EdgeInsets.symmetric(horizontal:18 ),
+//       child: Column(
+//             crossAxisAlignment: CrossAxisAlignment.start,
+//             mainAxisSize: MainAxisSize.min,
+//             children: <Widget>[
+//               Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
+//                 child: Text('Enter your address',
+//                     style: TextStyles.textBody2),
+//               ),
+//               SizedBox(
+//                 height: 8.0,
+//               ),
+//               Padding(
+//                 padding: EdgeInsets.only(
+//                     bottom: MediaQuery.of(context).viewInsets.bottom),
+//                 child: TextField(
+//                   decoration: InputDecoration(
+//                     hintText: 'adddrss'
+//                   ),
+//                   autofocus: true,
+//                   controller: _newMediaLinkAddressController,
+//                 ),
+//               ),
+
+//               SizedBox(height: 10),
+//             ],
+//           ),
+//     ));
